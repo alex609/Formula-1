@@ -1,0 +1,32 @@
+CREATE DATABASE formula_1
+
+CREATE TABLE calendar(
+	gran_prix_number integer PRIMARY KEY,
+	gran_prix_name text NOT NULL,
+	gran_prix_date integer NOT NULL,
+	UNIQUE KEY gran_prix_country text NOT NULL,
+	place text NOT NULL);
+CREATE TABLE racers(
+	surname text PRIMARY KEY,
+	racer_name text NOT NULL,
+	birth_date integer NOT NULL,
+	racer_country text NOT NULL,
+	racer_wins integer);
+CREATE TABLE teams(
+	team_name text PRIMARY KEY,
+	engine text NOT NULL,
+	racer_1_name text NOT NULL,
+	racer_1_surname text NOT NULL,
+	racer_2_name text NOT NULL,
+	racer_2_surname text NOT NULL,
+	racers_1_number integer NOT NULL,
+	racers_2_number integer NOT NULL
+	reserved_racer_name text NOT NULL,
+	reserved_racer_surname text NOT NULL,
+	team_country text NOT NULL);
+CREATE TABLE results(
+	surname text NOT NULL,
+	gran_prix_name text NOT NULL,
+	racer_points integer,
+	time text NOT NULL,
+	leading_laps integer);
